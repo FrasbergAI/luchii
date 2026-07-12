@@ -1,22 +1,45 @@
-# Frasberg AI Developer Portal
+# FrasbergAI / Luchii Codex Index
 
-Welcome to the Frasberg AI developer portal for **Luchii Engine**.
+Welcome to the central documentation index for **Luchii**, the nucleus of the FrasbergAI ecosystem.
 
-## Core Links
-- API Base URL: `https://api.frasbergai.com/luchii/v1/`
+Luchii serves here as a governed, multi-domain codex: the place where semantic nodes, shared contracts, and governed lineage are documented before domain repos and runtime services split into their own repositories.
+
+## Core Codex Links
+
+- API contracts and technical scope: `docs/api-contracts.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`
-- JavaScript SDK: `docs/sdk-js.md`
-- Python SDK: `docs/sdk-python.md`
+- JavaScript SDK concept: `docs/sdk-js.md`
+- Python SDK concept: `docs/sdk-python.md`
 - Cosmic Expansion Compendium: `docs/cosmic-expansion.md`
 
-## API Domains
-- `/market` — signals, setups, streams
-- `/lead` — routing, pressure, account actions
-- `/coach` — transcription, next-line, live coaching
-- `/memory` — store, retrieve, remove memory
-- `/assist` — human-style representative responses
-- `/skin` — persona style and state
+## Scaffold Map
+
+- `/docs` — technical documentation and API contracts
+- `/blueprints` — architectural and cosmological scaffolds
+- `/diagrams` — visual system maps and schematics
+- `/scripts` — automation and deployment utilities
+- `/chapters` — narrative and conceptual documentation
+- `/species` — entity and ontology definitions
+- `/civilizations` — cultural and systemic models
+
+## Mesh Positioning
+
+- **Core contract:** Luchii defines the shared codex surface that future domains inherit.
+- **Semantic nodes:** each domain can later evolve into a dedicated repository while remaining linked to this codex.
+- **Governed lineage:** architecture, ontology, and narrative layers stay traceable as the ecosystem grows.
+
+## Domain Evolution
+
+This repository anticipates future repos such as `frasbergai-species`, `frasbergai-civilizations`, and `frasbergai-chronicles`. Runtime and service repos may emerge later as separate implementation surfaces.
+
+## Roadmap
+
+- **v1.0** — Core scaffolds committed
+- **v1.1** — Domain split and repo orchestration
+- **v2.0** — FrasbergAI Portal and unified SDK
+- **v3.0** — Multi-region governance and production deployment
 
 ## Conceptual Architecture Notes
-Luchii docs may reference advanced conceptual architecture labels (v11–v17, sovereign/continuum/dimensional naming). These are **design and narrative constructs** for product vision and UI storytelling, **not claims of real-world performance guarantees**.
+
+Some documentation uses aspirational architecture language such as multi-domain mesh, semantic nodes, continuum framing, or cosmological scaffolds. These are codex and design constructs for ecosystem planning, not claims of production runtime behavior in this repository today.

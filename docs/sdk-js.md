@@ -1,4 +1,8 @@
-# JavaScript SDK
+# JavaScript SDK Concept
+
+This page documents an aspirational JavaScript SDK surface for the FrasbergAI codex.
+
+The package names and examples below are contract-oriented placeholders for a future unified SDK. They are included to describe intended developer ergonomics, not to claim that a published runtime package already exists from this repository.
 
 ## Install
 
@@ -78,3 +82,7 @@ const route = await luchii.lead.route({ leadId: "L-8821", pressure: signal.confi
 const nbl = await luchii.coach.nextLine({ context: "Transition to CTA", persona: "executive" });
 await luchii.memory.store({ memory_type: "session", content: { signal, route, nbl } });
 ```
+
+## Scope Note
+
+Treat this document as a codex contract sketch for future SDK work that may land in Luchii-adjacent runtime repositories or a later unified FrasbergAI SDK.

@@ -1,4 +1,8 @@
-# Python SDK
+# Python SDK Concept
+
+This page documents an aspirational Python SDK surface for the FrasbergAI codex.
+
+The package names and examples below are contract-oriented placeholders for a future unified SDK. They are included to describe intended developer ergonomics, not to claim that a published runtime package already exists from this repository.
 
 ## Install
 
@@ -75,3 +79,7 @@ route = luchii.lead.route({"lead_id": "L-8821", "pressure": signal.get("confiden
 nbl = luchii.coach.next_line({"context": "Transition to CTA", "persona": "executive"})
 luchii.memory.store({"memory_type": "session", "content": {"signal": signal, "route": route, "nbl": nbl}})
 ```
+
+## Scope Note
+
+Treat this document as a codex contract sketch for future SDK work that may land in Luchii-adjacent runtime repositories or a later unified FrasbergAI SDK.

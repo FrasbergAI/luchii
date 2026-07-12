@@ -13,16 +13,18 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Launch email to partners: `docs/launch-email-partners.md`
 - Public homepage copy: `docs/public-homepage-copy.md`
 - Public FAQ: `docs/public-faq.md`
-- Public Luchii model card: `docs/model-card-luchii-public.md`
+- Public Luchii model card (extended): `docs/model-card-luchii-public.md`
 - Luchii technical whitepaper: `docs/luchii-technical-whitepaper.md`
 - Luchii codex training philosophy: `docs/luchii-codex-training-philosophy.md`
 - Luchii deep technical architecture: `docs/luchii-deep-technical-architecture.md`
 - Press kit: `docs/press-kit.md`
 - Launch social media pack: `docs/launch-social-media-pack.md`
 - Brand narrative: `docs/brand-narrative.md`
+- Global marketing campaign: `docs/global-marketing-campaign.md`
 - Investor brief: `docs/investor-brief.md`
 - Public roadshow deck: `docs/public-roadshow-deck.md`
 - Partner program deck: `docs/partner-program-deck.md`
+- Partner integration blueprint: `docs/partner-integration-blueprint.md`
 - Multi-domain knowledge map: `docs/multi-domain-knowledge-map.md`
 - Governance constitution: `governance/constitution.md`
 - Governance constitution public summary: `governance/constitution-public-summary.md`
@@ -35,6 +37,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Open source governance model: `governance/open-source-governance-model.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
 - Enterprise licensing guide: `docs/enterprise-licensing-guide.md`
+- Governance transparency report: `docs/governance-transparency-report.md`
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
 - Developer portal landing page: `portal/developer-portal-landing.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`

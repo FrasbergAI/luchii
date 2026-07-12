@@ -1,57 +1,76 @@
-# Luchii Model Card — Public Release v1.0
+# Luchii Codex Extended Model Card
+
+## Model Name
+
+Luchii — Frasberg AI Core Codex
+
+## Version
+
+Public Release v1.0 (Extended)
 
 ## Model Overview
 
-Luchii is the core text-generation and reasoning model powering the Frasberg AI ecosystem.  
-It is designed for governed intelligence, multi-domain reasoning, and safe deployment across global regions.
+Luchii is the central intelligence engine powering the Frasberg AI ecosystem.  
+It provides structured reasoning, domain-aware interpretation, constitutional alignment, and multi-region compliance.
 
-## Intended Use
+## Capabilities
 
-- Conversational AI
-- Content generation
-- Structured reasoning
-- Tool-call orchestration
-- Domain-aware responses
+### Reasoning
 
-## Not Intended For
+- Multi-domain logic
+- Structured outputs
+- Stable inference patterns
 
-- Unrestricted autonomous decision-making
-- Disallowed content categories
-- High-risk applications without governance review
-
-## Key Features
+### Governance
 
 - Constitutional alignment
-- Multi-region deployment
-- Tool-call safety
-- Domain scaffolding compatibility
-- Predictable output behavior
+- Policy engine enforcement
+- Redaction layer safety
 
-## Safety
+### Tool-Call Engine
 
-Luchii follows:
+- Deterministic function calling
+- Parameter validation
+- Multi-tool orchestration
 
-- Frasberg AI Safety Charter
-- Governance Constitution
-- Redaction & Policy Engine rules
+### Domain Integration
+
+- Species Codex
+- Civilizations Atlas
+- Chronicles Library
+
+## Training Philosophy
+
+- Governance-first architecture
+- Domain-structured learning
+- Constitutional alignment layer
+- Multi-region awareness
+- Deterministic tool-call behavior
 
 ## Performance
 
-Optimized for:
-
 - Low latency
-- High reliability
-- Multi-domain context handling
+- High throughput
+- Predictable outputs
+- Region-aware compliance
 
-## API Access
+## API Endpoints
 
-Available through:
-
-- `/completions`
 - `/chat/completions`
+- `/completions`
 - `/embeddings`
 - `/tools/call`
 
+## Safety
+
+Luchii adheres to:
+
+- Frasberg AI Safety Charter
+- Governance Constitution
+- Policy Engine
+- Redaction Layer
+- Audit Logging
+
 ## License
 
-Enterprise License Agreement applies.
+Frasberg AI Enterprise License.

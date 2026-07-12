@@ -41,6 +41,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
 - Developer portal landing page: `portal/developer-portal-landing.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`
+- Deployment architecture: `docs/DEPLOYMENT.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`
 - JavaScript SDK concept: `docs/sdk-js.md`

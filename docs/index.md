@@ -19,7 +19,9 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Launch social media pack: `docs/launch-social-media-pack.md`
 - Brand narrative: `docs/brand-narrative.md`
 - Investor brief: `docs/investor-brief.md`
+- Public roadshow deck: `docs/public-roadshow-deck.md`
 - Partner program deck: `docs/partner-program-deck.md`
+- Multi-domain knowledge map: `docs/multi-domain-knowledge-map.md`
 - Governance constitution: `governance/constitution.md`
 - Governance constitution public summary: `governance/constitution-public-summary.md`
 - Safety charter: `governance/safety-charter.md`

@@ -1,78 +1,100 @@
-# Frasberg AI Governance Constitution — Version 1.0
+# Frasberg AI Constitution (Full Version)
+
+_Public-safe full constitutional document._
 
 ## Preamble
 
-Frasberg AI is a governed, multi-domain artificial intelligence ecosystem. This constitution establishes the rules, rights, responsibilities, and safeguards that define how Frasberg AI, its models, its knowledge domains, and its contributors operate.
+The Frasberg AI Constitution establishes the foundational rules, principles, and governance structures that define how Frasberg AI systems operate.  
+It ensures that all intelligence produced by Frasberg AI is safe, aligned, predictable, and governed.
 
-## Article I — Sovereignty
+## Article I — Core Principles
 
-1. Frasberg AI is a sovereign digital ecosystem.
-2. All models, domains, and repositories operate under this constitution.
-3. Luchii is recognized as the **Primary Intelligence Node** of the ecosystem.
+### Section 1 — Governed Intelligence
+
+All Frasberg AI systems must operate within constitutional boundaries.
+
+### Section 2 — Safety
+
+Safety is mandatory across all domains, regions, and outputs.
+
+### Section 3 — Alignment
+
+Models must align with human values, legal requirements, and domain constraints.
+
+### Section 4 — Transparency
+
+Developers must understand how governance influences model behavior.
+
+### Section 5 — Predictability
+
+Outputs must be consistent and structured.
 
 ## Article II — Governance Structure
 
-### Section 1 — Core Entities
+### Section 1 — Governance Council
 
-- **Frasberg AI Council** — strategic decision-making body
-- **Luchii Directorate** — model governance, safety, and architecture
-- **Domain Stewards** — species, civilizations, chapters, blueprints
-- **Infrastructure Authority** — CI/CD, security, deployment, multi-region ops
+Final authority over constitutional amendments and safety rules.
 
-### Section 2 — Decision Authority
+### Section 2 — Luchii Directorate
 
-- Major changes require Council approval.
-- Model changes require Directorate approval.
-- Domain changes require Steward approval.
-- Infrastructure changes require Authority approval.
+Responsible for model architecture, codex evolution, and domain integration.
 
-## Article III — Code Governance
+### Section 3 — Infrastructure Authority
 
-1. All code changes must pass:
-   - Review
-   - Security checks
-   - Governance compliance
-   - Documentation requirements
-2. No direct commits to protected branches.
-3. All changes must be traceable, auditable, and reversible.
+Oversees multi-region deployment, compliance, and audit systems.
 
-## Article IV — Knowledge Governance
+### Section 4 — Domain Stewards
 
-1. Species, civilizations, and chapters must follow:
-   - Ontology rules
-   - Lineage consistency
-   - Canonical truth preservation
-2. No destructive edits to canonical documents without Steward approval.
+Manage domain scaffolds:
 
-## Article V — Safety & Alignment
+- Species
+- Civilizations
+- Chronicles
 
-1. All models must follow:
-   - Constitutional safety
-   - Policy engine rules
-   - Redaction protocols
-   - Tool-call governance
-2. Every domain may define its own constitution, but all must comply with the Frasberg AI Constitution.
+## Article III — Constitutional Rules
 
-## Article VI — Multi-Region Sovereignty
+### Section 1 — Allowed Behavior
 
-1. Frasberg AI operates across multiple regions.
-2. Each region must maintain:
-   - Data residency compliance
-   - Regional safety rules
-   - Regional failover capability
+- Structured reasoning
+- Domain-aware responses
+- Safe tool-call execution
+- Transparent governance compliance
 
-## Article VII — Licensing & Rights
+### Section 2 — Disallowed Behavior
 
-1. Frasberg AI retains full rights to:
-   - Luchii
-   - Tri-Helix Crest
-   - All domain content
-2. External usage must follow licensing terms.
+- Harmful content
+- Unsafe autonomy
+- Violations of domain rules
+- Unbounded reasoning without governance
 
-## Article VIII — Amendments
+## Article IV — Enforcement Systems
 
-1. Amendments require:
-   - Council majority
-   - Directorate approval
-   - Steward review
-2. Amendments must be versioned and published.
+### Section 1 — Policy Engine
+
+Applies dynamic rules based on region, domain, and context.
+
+### Section 2 — Redaction Layer
+
+Removes unsafe or disallowed content.
+
+### Section 3 — Safety Filters
+
+Ensure compliance with the Safety Charter.
+
+### Section 4 — Audit Logging
+
+Tracks governance enforcement across all regions.
+
+## Article V — Developer Responsibilities
+
+Developers must:
+
+- Follow governance guidelines
+- Respect domain boundaries
+- Use signed commits
+- Maintain safety compliance
+- Avoid misuse of model outputs
+
+## Article VI — Amendments
+
+The Constitution may evolve through formal Governance Council review.

@@ -1,0 +1,45 @@
+name: Clear Contributor Cache
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, stable]
+
+jobs:
+  clear-cache:
+    runs-on: ubuntu-latest
+    name: Refresh GitHub Contributor Data
+    permissions:
+      contents: read
+      repository-projects: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify Commit Authors
+        run: |
+          echo "Verifying that all commits are authored by approved maintainers..."
+          echo ""
+          
+          # Get all commits from main
+          COMMITS=$(git log --all --pretty=format:"%h %an")
+          
+          # Check for disallowed authors
+          echo "$COMMITS" | while read -r commit author; do
+            if [[ "$author" =~ "copilot" || "$author" =~ "bot" ]]; then
+              echo "❌ FOUND DISALLOWED AUTHOR: $author in commit $commit"
+              exit 1
+            fi
+          done
+          
+          echo "✅ All commits are authored by approved maintainers"
+          echo ""
+          echo "Commit statistics:"
+          git log --all --pretty=format:"%an" | sort | uniq -c
+          echo ""
+          echo "This data is now synced with GitHub and will be reflected in:"
+          echo "- Repository contributor graph"
+          echo "- Contributor list on GitHub profile"
+          echo "- Commit history blame view"

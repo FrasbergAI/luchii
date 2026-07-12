@@ -16,6 +16,7 @@ Use this space for:
 - `constitution.md`
 - `constitution-public-summary.md`
 - `safety-charter.md`
+- `safety-charter-public.md`
 - `repository-ruleset.md`
 - `repo-visibility-policy.md`
 - `launch-readiness-checklist.md`

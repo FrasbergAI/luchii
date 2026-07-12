@@ -9,9 +9,12 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - API contracts and technical scope: `docs/api-contracts.md`
 - API reference: `docs/api-reference.md`
 - Launch announcement: `docs/launch-announcement.md`
+- Launch email to partners: `docs/launch-email-partners.md`
 - Public homepage copy: `docs/public-homepage-copy.md`
+- Public FAQ: `docs/public-faq.md`
 - Public Luchii model card: `docs/model-card-luchii-public.md`
 - Luchii technical whitepaper: `docs/luchii-technical-whitepaper.md`
+- Luchii deep technical architecture: `docs/luchii-deep-technical-architecture.md`
 - Press kit: `docs/press-kit.md`
 - Launch social media pack: `docs/launch-social-media-pack.md`
 - Brand narrative: `docs/brand-narrative.md`
@@ -20,6 +23,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Governance constitution: `governance/constitution.md`
 - Governance constitution public summary: `governance/constitution-public-summary.md`
 - Safety charter: `governance/safety-charter.md`
+- Safety charter public version: `governance/safety-charter-public.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
 - Repo visibility policy: `governance/repo-visibility-policy.md`
 - Launch readiness checklist: `governance/launch-readiness-checklist.md`

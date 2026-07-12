@@ -9,6 +9,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - API contracts and technical scope: `docs/api-contracts.md`
 - Governance constitution: `governance/constitution.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
+- Legal protection strategy: `governance/legal-protection-strategy.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`
 - JavaScript SDK concept: `docs/sdk-js.md`

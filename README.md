@@ -46,4 +46,5 @@ Runtime and service repositories can be introduced separately once the codex and
 - API and technical docs: `docs/api-contracts.md`
 - Governance constitution: `governance/constitution.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
+- Legal protection strategy: `governance/legal-protection-strategy.md`
 - Cosmic Expansion Compendium: `docs/cosmic-expansion.md`

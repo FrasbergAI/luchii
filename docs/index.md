@@ -59,14 +59,20 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - JavaScript SDK concept: `docs/sdk-js.md`
 - Python SDK concept: `docs/sdk-python.md`
 - Cosmic Expansion Compendium: `docs/cosmic-expansion.md`
+- Architecture decision records: `docs/adr/0001-governance-first-routing-and-github-app-token-safety.md`
 
 ## Scaffold Map
 
 - `/docs` — technical documentation and API contracts
+- `/docs/adr` — architecture decision records
 - `/blueprints` — architectural and cosmological scaffolds
 - `/diagrams` — visual system maps and schematics
 - `/governance` — constitutions, policies, and repository safeguards
 - `/legal` — licensing and enterprise usage materials
+- `/luchii` — initial TypeScript model-routing scaffold
+- `/infra` — integration modules such as GitHub App auth
+- `/schemas` — versioned configuration schemas
+- `/test` — focused TypeScript regression tests
 - `/portal` — portal and interface design scaffolds
 - `/scripts` — automation and deployment utilities
 - `/chapters` — narrative and conceptual documentation

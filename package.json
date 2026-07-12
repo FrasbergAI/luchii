@@ -1,0 +1,25 @@
+{
+  "name": "luchii",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luchii is the nucleus of the FrasbergAI ecosystem: a governed, multi-domain architecture codex that defines shared structure, semantic nodes, and core contract scaffolds for future domain repositories.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "node --import tsx --test ./test/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrasbergAI/luchii.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrasbergAI/luchii/issues"
+  },
+  "homepage": "https://github.com/FrasbergAI/luchii#readme",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

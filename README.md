@@ -8,10 +8,15 @@ This repository is the **central codex**, not a runtime engine. It exists to doc
 
 ```text
 /docs             Technical documentation and API contracts
+/docs/adr         Architecture decision records
 /blueprints       Architectural and cosmological scaffolds
 /diagrams         Visual system maps and schematics
 /governance       Constitution, policies, and repository safeguards
 /legal            Licensing and enterprise usage materials
+/luchii           Initial TypeScript model-routing scaffold
+/infra            Integration modules such as GitHub App auth
+/schemas          Versioned configuration schemas
+/test             Focused TypeScript regression tests
 /portal           Portal and interface design scaffolds
 /scripts          Automation and deployment utilities
 /chapters         Narrative and conceptual documentation
@@ -81,3 +86,4 @@ Runtime and service repositories can be introduced separately once the codex and
 - Developer portal landing page: `portal/developer-portal-landing.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`
 - Cosmic Expansion Compendium: `docs/cosmic-expansion.md`
+- Architecture decision records: `docs/adr/0001-governance-first-routing-and-github-app-token-safety.md`

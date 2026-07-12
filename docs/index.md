@@ -6,6 +6,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 
 ## Core Codex Links
 
+- **Master specification (canonical):** `MASTER_SPEC.md`
 - API contracts and technical scope: `docs/api-contracts.md`
 - API reference: `docs/api-reference.md`
 - Launch announcement: `docs/launch-announcement.md`
@@ -27,6 +28,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Partner integration blueprint: `docs/partner-integration-blueprint.md`
 - Multi-domain knowledge map: `docs/multi-domain-knowledge-map.md`
 - Governance constitution: `governance/constitution.md`
+- Governance constitution v2.0: `governance/constitution-v2.md`
 - Governance constitution public summary: `governance/constitution-public-summary.md`
 - Safety charter: `governance/safety-charter.md`
 - Safety charter public version: `governance/safety-charter-public.md`
@@ -40,7 +42,17 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Governance transparency report: `docs/governance-transparency-report.md`
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
 - Developer portal landing page: `portal/developer-portal-landing.md`
+- Developer portal: `portal/developer-portal.html`
 - Portal UI wireframe: `portal/ui-wireframe.md`
+- Platform specification: `PLATFORM.md`
+- Platform diagram: `diagrams/PLATFORM_DIAGRAM.svg`
+- Agent Framework v2.0: `AGENT_FRAMEWORK_V2.md`
+- Agent blueprints: `AGENT_BLUEPRINTS.md`
+- API Gateway specification: `API_GATEWAY_SPEC.md`
+- Architecture specification: `ARCHITECTURE.md`
+- Tool-call registry & schemas: `TOOLS.md`
+- Domain engine specification: `DOMAINS.md`
+- Glossary: `GLOSSARY.md`
 - Deployment architecture: `docs/DEPLOYMENT.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`

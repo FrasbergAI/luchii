@@ -7,9 +7,13 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 ## Core Codex Links
 
 - API contracts and technical scope: `docs/api-contracts.md`
+- API reference: `docs/api-reference.md`
 - Governance constitution: `governance/constitution.md`
+- Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
+- Enterprise license agreement: `legal/enterprise-license-agreement.md`
+- Portal UI wireframe: `portal/ui-wireframe.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`
 - JavaScript SDK concept: `docs/sdk-js.md`
@@ -22,6 +26,8 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - `/blueprints` — architectural and cosmological scaffolds
 - `/diagrams` — visual system maps and schematics
 - `/governance` — constitutions, policies, and repository safeguards
+- `/legal` — licensing and enterprise usage materials
+- `/portal` — portal and interface design scaffolds
 - `/scripts` — automation and deployment utilities
 - `/chapters` — narrative and conceptual documentation
 - `/species` — entity and ontology definitions

@@ -11,6 +11,8 @@ This repository is the **central codex**, not a runtime engine. It exists to doc
 /blueprints       Architectural and cosmological scaffolds
 /diagrams         Visual system maps and schematics
 /governance       Constitution, policies, and repository safeguards
+/legal            Licensing and enterprise usage materials
+/portal           Portal and interface design scaffolds
 /scripts          Automation and deployment utilities
 /chapters         Narrative and conceptual documentation
 /species          Entity and ontology definitions
@@ -44,7 +46,11 @@ Runtime and service repositories can be introduced separately once the codex and
 
 - Codex index: `docs/index.md`
 - API and technical docs: `docs/api-contracts.md`
+- API reference: `docs/api-reference.md`
 - Governance constitution: `governance/constitution.md`
+- Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
+- Enterprise license agreement: `legal/enterprise-license-agreement.md`
+- Portal UI wireframe: `portal/ui-wireframe.md`
 - Cosmic Expansion Compendium: `docs/cosmic-expansion.md`

@@ -8,6 +8,9 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 
 - API contracts and technical scope: `docs/api-contracts.md`
 - API reference: `docs/api-reference.md`
+- Launch announcement: `docs/launch-announcement.md`
+- Public homepage copy: `docs/public-homepage-copy.md`
+- Public Luchii model card: `docs/model-card-luchii-public.md`
 - Governance constitution: `governance/constitution.md`
 - Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
@@ -17,6 +20,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Open source governance model: `governance/open-source-governance-model.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
+- Developer portal landing page: `portal/developer-portal-landing.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`
 - Status: `docs/status.md`
 - Quickstart: `docs/quickstart.md`

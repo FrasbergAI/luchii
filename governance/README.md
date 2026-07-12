@@ -14,6 +14,7 @@ Use this space for:
 ## Governance References
 
 - `constitution.md`
+- `constitution-public-summary.md`
 - `safety-charter.md`
 - `repository-ruleset.md`
 - `repo-visibility-policy.md`

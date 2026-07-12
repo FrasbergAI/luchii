@@ -50,11 +50,14 @@ Runtime and service repositories can be introduced separately once the codex and
 - Launch announcement: `docs/launch-announcement.md`
 - Public homepage copy: `docs/public-homepage-copy.md`
 - Public Luchii model card: `docs/model-card-luchii-public.md`
+- Luchii technical whitepaper: `docs/luchii-technical-whitepaper.md`
 - Press kit: `docs/press-kit.md`
 - Launch social media pack: `docs/launch-social-media-pack.md`
 - Brand narrative: `docs/brand-narrative.md`
 - Investor brief: `docs/investor-brief.md`
+- Partner program deck: `docs/partner-program-deck.md`
 - Governance constitution: `governance/constitution.md`
+- Governance constitution public summary: `governance/constitution-public-summary.md`
 - Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
 - Repo visibility policy: `governance/repo-visibility-policy.md`

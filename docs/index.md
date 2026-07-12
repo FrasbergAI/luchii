@@ -8,6 +8,7 @@ Welcome to the Frasberg AI developer portal for **Luchii Engine**.
 - Quickstart: `docs/quickstart.md`
 - JavaScript SDK: `docs/sdk-js.md`
 - Python SDK: `docs/sdk-python.md`
+- Cosmic Expansion Compendium: `docs/cosmic-expansion.md`
 
 ## API Domains
 - `/market` — signals, setups, streams

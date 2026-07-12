@@ -6,6 +6,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 
 ## Core Codex Links
 
+- **Master specification (canonical):** `MASTER_SPEC.md`
 - API contracts and technical scope: `docs/api-contracts.md`
 - API reference: `docs/api-reference.md`
 - Launch announcement: `docs/launch-announcement.md`

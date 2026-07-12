@@ -1,37 +1,72 @@
 # Frasberg AI Public Homepage Copy
 
-## Frasberg AI — Governed Intelligence for a Multi-Domain Future
+## Hero Section
 
-Frasberg AI builds intelligence systems that are structured, aligned, and governed.  
-Our platform combines advanced model capabilities with constitutional safety, multi-region deployment, and domain-specific knowledge architectures.
+### Frasberg AI
 
-## Our Mission
+#### Governed Intelligence for a Multi-Domain Future
 
-To create intelligence that is powerful, predictable, and safe — built on governance, not guesswork.
+Build with Luchii — the Frasberg AI core codex engineered for structured reasoning, constitutional safety, and global reliability.
 
-## The Core Engine: Luchii
+**Primary CTA:** Get Started  
+**Secondary CTA:** Developer Portal  
+**Tertiary CTA:** Luchii Models
 
-Luchii is the Frasberg AI codex — the model that interprets, reasons, and generates across all domains:
+## About Frasberg AI
 
-- Species Codex
-- Civilizations Atlas
-- Chronicles Library
+Frasberg AI creates governed intelligence systems designed for enterprises, developers, and global organizations that require structure, safety, and predictable behavior.
 
-## Built for Developers
+Our architecture combines advanced model capabilities with constitutional governance, multi-region deployment, and domain-aware reasoning.
 
-- Clean APIs
-- Transparent governance
+## Meet Luchii — The Core Codex
+
+Luchii is the flagship model powering the Frasberg AI ecosystem.
+
+## Key Capabilities
+
+- Constitutional alignment
+- Multi-domain reasoning
 - Tool-call orchestration
-- Multi-region reliability
-- Enterprise licensing
+- Structured output behavior
+- Multi-region deployment
 
-## Explore the Ecosystem
+## Model Endpoints
 
-- Luchii Models
-- Developer Portal
-- Governance Center
-- API Documentation
+- Chat
+- Completions
+- Embeddings
+- Tools
+
+## Domains
+
+Frasberg AI organizes intelligence into three governed domains:
+
+- **Species Codex** — Biological, entity, and classification reasoning
+- **Civilizations Atlas** — Societal, structural, and organizational reasoning
+- **Chronicles Library** — Narrative, temporal, and historical reasoning
+
+## Governance Center
+
+Frasberg AI is built on a constitutional framework:
+
+- Governance Constitution
 - Safety Charter
+- Policy Engine
+- Redaction Rules
+- Audit Standards
 
-Frasberg AI is intelligence with structure.  
-Welcome to the governed future.
+## Developer Platform
+
+Everything you need to build with governed intelligence:
+
+- API Reference
+- SDKs
+- Tutorials
+- Quickstarts
+- Governance documentation
+- Multi-region deployment options
+
+## Footer
+
+© 2026 Frasberg  
+Governed Intelligence. Structured Futures.

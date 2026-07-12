@@ -11,6 +11,10 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Launch announcement: `docs/launch-announcement.md`
 - Public homepage copy: `docs/public-homepage-copy.md`
 - Public Luchii model card: `docs/model-card-luchii-public.md`
+- Press kit: `docs/press-kit.md`
+- Launch social media pack: `docs/launch-social-media-pack.md`
+- Brand narrative: `docs/brand-narrative.md`
+- Investor brief: `docs/investor-brief.md`
 - Governance constitution: `governance/constitution.md`
 - Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`

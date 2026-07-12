@@ -11,6 +11,10 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Governance constitution: `governance/constitution.md`
 - Safety charter: `governance/safety-charter.md`
 - Repository ruleset reference: `governance/repository-ruleset.md`
+- Repo visibility policy: `governance/repo-visibility-policy.md`
+- Launch readiness checklist: `governance/launch-readiness-checklist.md`
+- Public release strategy: `governance/public-release-strategy.md`
+- Open source governance model: `governance/open-source-governance-model.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`

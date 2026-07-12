@@ -10,3 +10,13 @@ Use this space for:
 - repository protection policies
 - audit and approval scaffolds
 - governance references for future domain and runtime repositories
+
+## Governance References
+
+- `constitution.md`
+- `safety-charter.md`
+- `repository-ruleset.md`
+- `repo-visibility-policy.md`
+- `launch-readiness-checklist.md`
+- `public-release-strategy.md`
+- `open-source-governance-model.md`

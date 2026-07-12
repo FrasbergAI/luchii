@@ -6,7 +6,7 @@
 The Frasberg AI core codex — governed, structured, multi-domain intelligence.  
 Build with APIs designed for reliability, safety, and precision.  
 Welcome to the governed future.  
-\#FrasbergAI \#Luchii \#AI
+#FrasbergAI #Luchii #AI
 
 ## LinkedIn
 
@@ -22,7 +22,7 @@ Governed intelligence.
 Structured reasoning.  
 Multi-domain capability.  
 The future of AI begins with a codex.  
-\#FrasbergAI \#LuchiiLaunch
+#FrasbergAI #LuchiiLaunch
 
 ## TikTok / Reels
 

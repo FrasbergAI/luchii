@@ -9,11 +9,13 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - API contracts and technical scope: `docs/api-contracts.md`
 - API reference: `docs/api-reference.md`
 - Launch announcement: `docs/launch-announcement.md`
+- Developer conference keynote: `docs/developer-conference-keynote.md`
 - Launch email to partners: `docs/launch-email-partners.md`
 - Public homepage copy: `docs/public-homepage-copy.md`
 - Public FAQ: `docs/public-faq.md`
 - Public Luchii model card: `docs/model-card-luchii-public.md`
 - Luchii technical whitepaper: `docs/luchii-technical-whitepaper.md`
+- Luchii codex training philosophy: `docs/luchii-codex-training-philosophy.md`
 - Luchii deep technical architecture: `docs/luchii-deep-technical-architecture.md`
 - Press kit: `docs/press-kit.md`
 - Launch social media pack: `docs/launch-social-media-pack.md`
@@ -32,6 +34,7 @@ Luchii serves here as a governed, multi-domain codex: the place where semantic n
 - Public release strategy: `governance/public-release-strategy.md`
 - Open source governance model: `governance/open-source-governance-model.md`
 - Legal protection strategy: `governance/legal-protection-strategy.md`
+- Enterprise licensing guide: `docs/enterprise-licensing-guide.md`
 - Enterprise license agreement: `legal/enterprise-license-agreement.md`
 - Developer portal landing page: `portal/developer-portal-landing.md`
 - Portal UI wireframe: `portal/ui-wireframe.md`

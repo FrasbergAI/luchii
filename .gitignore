@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+env/
+venv/
+
+# Model artifacts
+models/**/*.bin
+models/**/*.safetensors
+models/**/*.pth
+models/**/*.pt
+checkpoints/
+training_runs/
+*.ckpt
+
+# Large data
+data/raw/
+data/cache/
+data/tmp/
+*.npz
+*.npy
+
+# Logs
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+dist/
+build/
+site/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db

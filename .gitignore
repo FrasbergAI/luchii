@@ -4,6 +4,8 @@ __pycache__/
 *.pyo
 *.pyd
 .env
+.env.local
+.env.*.local
 .venv/
 env/
 venv/
@@ -37,6 +39,31 @@ build/
 site/
 *.egg-info/
 
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Node (UI)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local development
+.env.local
+.env.test.local
+.env.staging.local
+.DS_Store
+*.local
+
+# Docker
+.dockerignore

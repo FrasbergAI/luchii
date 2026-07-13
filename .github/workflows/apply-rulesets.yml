@@ -72,14 +72,6 @@ jobs:
           repo = os.environ["GITHUB_REPOSITORY"]
           token = os.environ["GITHUB_TOKEN"]
 
-          # NOTE: required_status_checks is omitted because the repository has no
-          # proper CI/test workflow yet. The only existing check
-          # ("Refresh GitHub Contributor Data") is not a CI check.
-          # Add required_status_checks once real CI jobs are in place.
-          #
-          # NOTE: require_code_owner_review is set but the repo has no CODEOWNERS
-          # file yet — add one to make this effective.
-
           ruleset = {
             "name": "Protect main",
             "target": "branch",
@@ -93,7 +85,7 @@ jobs:
             ],
             "conditions": {
               "ref_name": {
-                "include": ["refs/heads/main"],
+                "include": ["main"],
                 "exclude": []
               }
             },
@@ -148,7 +140,7 @@ jobs:
             "enforcement": "active",
             "conditions": {
               "ref_name": {
-                "include": ["refs/heads/dev"],
+                "include": ["dev"],
                 "exclude": []
               }
             },
@@ -201,7 +193,7 @@ jobs:
             "enforcement": "active",
             "conditions": {
               "ref_name": {
-                "include": ["refs/heads/feature/**"],
+                "include": ["feature/*"],
                 "exclude": []
               }
             },
@@ -237,7 +229,7 @@ jobs:
           echo "                      block force-push + delete"
           echo "  ✅ Protect dev    — 1 approval, dismiss stale, resolved conversations,"
           echo "                      block force-push + delete"
-          echo "  ✅ Protect feature branches — block force-push + delete on feature/**"
+          echo "  ✅ Protect feature branches — block force-push + delete on feature/*"
           echo ""
           echo "  ⚠️  required_status_checks omitted: no CI/test workflow exists yet."
           echo "     Add one and reference its job name in the ruleset to enable it."

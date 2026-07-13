@@ -13,7 +13,7 @@ Branch: autonomy-governed-docs-update
 Merge Method: Manual governed merge  
 Commit SHA: 09b70b557e3539fba67249e4951e2373dc33f434  
 Merge Timestamp: 2026-07-13T02:02:45Z  
-Merged By: Governance Authority (EmeraldOrbit)
+Merged By: Governance Authority (Frasberg)
 
 ## Governance Validation
 - Merge‑gate checklist satisfied  

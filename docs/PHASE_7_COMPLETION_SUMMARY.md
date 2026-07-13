@@ -8,7 +8,7 @@
 - Merge Status: ✅ AUTHORIZED & COMPLETE
 - Merge Method: Manual governed merge (Article IV)
 - Merge Timestamp: 2026-07-13T02:02:45Z
-- Merge Authority: EmeraldOrbit (Governance Authority)
+- Merge Authority: Frasberg (Governance Authority)
 
 ## 2. Post-Merge Stabilization Actions
 
@@ -36,7 +36,7 @@
 
 ### D. Governance Audit Logging
 - [x] Merge timestamp recorded: 2026-07-13T02:02:45Z
-- [x] Merge authority recorded: EmeraldOrbit
+- [x] Merge authority recorded: Frasberg
 - [x] Merge certificate issued and archived (updated with real data)
 - [x] Post-merge stabilization memo archived
 - [x] Bootstrap lifecycle summary archived

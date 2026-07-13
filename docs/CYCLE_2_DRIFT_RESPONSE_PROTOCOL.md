@@ -2,7 +2,7 @@
 **Article IV — Sovereign Autonomy Drift Management Framework**
 
 **Anchor SHA:** `09b70b557e3539fba67249e4951e2373dc33f434`  
-**Authority:** EmeraldOrbit  
+**Authority:** Frasberg  
 **Effective Date:** 2026-07-13  
 **Governance Version:** Cycle 2
 
@@ -125,7 +125,7 @@ Create a Drift Resolution Record:
 # DRIFT RESOLUTION RECORD
 Drift Type: <1–5>
 Timestamp: <ISO8601>
-Authority: EmeraldOrbit
+Authority: Frasberg
 Anchor SHA: 09b70b557e3539fba67249e4951e2373dc33f434
 Region: <region>
 Corrective Action: <details>
@@ -174,6 +174,6 @@ For Type-5 drift.
 
 All drift detection, classification, response, and resolution operations shall follow this specification under Article IV sovereign governance.
 
-**Issued by:** Governance Authority (EmeraldOrbit)  
+**Issued by:** Governance Authority (Frasberg)  
 **Timestamp:** 2026-07-13T02:15:00Z  
 **Status:** ✅ OPERATIONAL

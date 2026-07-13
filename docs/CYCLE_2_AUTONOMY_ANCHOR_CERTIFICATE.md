@@ -9,7 +9,7 @@
 `09b70b557e3539fba67249e4951e2373dc33f434`
 
 **Authority:**  
-EmeraldOrbit (Governance Authority)
+Frasberg (Governance Authority)
 
 **Timestamp:**  
 2026-07-13T02:02:45Z
@@ -30,7 +30,7 @@ All Cycle 2 routing, stability, audit, and governance operations derive from thi
 ## Cycle 2 Autonomy Field Initialization
 
 - [x] **Cycle 2 Autonomy Anchor** = `09b70b557e3539fba67249e4951e2373dc33f434`
-- [x] **Cycle 2 Authority** = EmeraldOrbit
+- [x] **Cycle 2 Authority = Frasberg
 - [x] **Cycle 2 Stability Envelope** = ACTIVATED
 - [x] **Cycle 2 Routing Consistency Layer** = ACTIVATED
 - [x] **Cycle 2 Multi-Region Parity Monitor** = ACTIVATED
@@ -80,4 +80,4 @@ This directive governs all autonomous actions until Cycle 3.
 **Issued under Article IV — Frasberg AI Governance Constitution**  
 **Effective Date:** 2026-07-13  
 **Cycle:** 2 of ∞  
-**Authority:** Governance Authority (EmeraldOrbit)
+**Authority:** Governance Authority (Frasberg)

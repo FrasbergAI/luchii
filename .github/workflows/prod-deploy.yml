@@ -23,7 +23,7 @@ jobs:
       FRASBERGAI_API_KEY: ${{ secrets.FRASBERGAI_API_KEY }}
       FRASBERGAI_MODEL_TOKEN: ${{ secrets.FRASBERGAI_MODEL_TOKEN }}
       FRASBERGAI_DB_URL: ${{ secrets.FRASBERGAI_DB_URL }}
-      FRASBERGAI_DEPLOY_KEY: ${{ secrets.FRASBERGAI_DEPLOY_KEY }}
+      FRASBERGAI_PROD_DEPLOY_KEY: ${{ secrets.FRASBERGAI_PROD_DEPLOY_KEY }}
 
     steps:
       - uses: actions/checkout@v4

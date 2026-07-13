@@ -1,0 +1,247 @@
+name: Apply Branch Rulesets
+
+on:
+  push:
+    branches:
+      - 'copilot/create-and-apply-branch-rulesets'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  administration: write
+
+jobs:
+  apply-rulesets:
+    runs-on: ubuntu-latest
+    name: Create and Apply Branch Rulesets
+    steps:
+      - name: Create dev branch if not exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/branches/dev")
+
+          if [ "$STATUS" = "404" ]; then
+            MAIN_SHA=$(curl -sf \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.repository }}/git/ref/heads/main" \
+              | python3 -c "import json,sys; print(json.load(sys.stdin)['object']['sha'])")
+            curl -sf -X POST \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "Content-Type: application/json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -d "{\"ref\":\"refs/heads/dev\",\"sha\":\"$MAIN_SHA\"}" \
+              "https://api.github.com/repos/${{ github.repository }}/git/refs"
+            echo "✅ Created dev branch from main ($MAIN_SHA)"
+          else
+            echo "ℹ️  dev branch already exists (HTTP $STATUS)"
+          fi
+
+      - name: Delete existing rulesets (idempotent cleanup)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RULESETS=$(curl -sf \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/rulesets" \
+            | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          names = ['Protect main', 'Protect dev', 'Protect feature branches']
+          ids = [r['id'] for r in data if r['name'] in names]
+          print(' '.join(map(str, ids)))
+          ")
+          for id in $RULESETS; do
+            curl -sf -X DELETE \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${{ github.repository }}/rulesets/$id"
+            echo "🗑️  Deleted existing ruleset id=$id"
+          done
+
+      - name: Create — Protect main ruleset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, subprocess, os
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GITHUB_TOKEN"]
+
+          # NOTE: required_status_checks is omitted because the repository has no
+          # proper CI/test workflow yet. The only existing check
+          # ("Refresh GitHub Contributor Data") is not a CI check.
+          # Add required_status_checks once real CI jobs are in place.
+          #
+          # NOTE: require_code_owner_review is set but the repo has no CODEOWNERS
+          # file yet — add one to make this effective.
+
+          ruleset = {
+            "name": "Protect main",
+            "target": "branch",
+            "enforcement": "active",
+            "bypass_actors": [
+              {
+                "actor_id": 5,
+                "actor_type": "RepositoryRole",
+                "bypass_mode": "always"
+              }
+            ],
+            "conditions": {
+              "ref_name": {
+                "include": ["refs/heads/main"],
+                "exclude": []
+              }
+            },
+            "rules": [
+              {
+                "type": "pull_request",
+                "parameters": {
+                  "required_approving_review_count": 2,
+                  "dismiss_stale_reviews_on_push": True,
+                  "require_code_owner_review": True,
+                  "require_last_push_approval": False,
+                  "required_review_thread_resolution": True
+                }
+              },
+              { "type": "required_linear_history" },
+              { "type": "required_signatures" },
+              { "type": "deletion" },
+              { "type": "non_fast_forward" }
+            ]
+          }
+
+          result = subprocess.run(
+            ["curl", "-sf", "-X", "POST",
+             "-H", f"Authorization: token {token}",
+             "-H", "Content-Type: application/json",
+             "-H", "X-GitHub-Api-Version: 2022-11-28",
+             "-d", json.dumps(ruleset),
+             f"https://api.github.com/repos/{repo}/rulesets"],
+            capture_output=True, text=True
+          )
+          response = json.loads(result.stdout)
+          if "id" in response:
+            print(f"✅ Created 'Protect main' ruleset (id={response['id']})")
+          else:
+            print(f"❌ Failed: {result.stdout}")
+            exit(1)
+          EOF
+
+      - name: Create — Protect dev ruleset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, subprocess, os
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GITHUB_TOKEN"]
+
+          ruleset = {
+            "name": "Protect dev",
+            "target": "branch",
+            "enforcement": "active",
+            "conditions": {
+              "ref_name": {
+                "include": ["refs/heads/dev"],
+                "exclude": []
+              }
+            },
+            "rules": [
+              {
+                "type": "pull_request",
+                "parameters": {
+                  "required_approving_review_count": 1,
+                  "dismiss_stale_reviews_on_push": True,
+                  "require_code_owner_review": False,
+                  "require_last_push_approval": False,
+                  "required_review_thread_resolution": True
+                }
+              },
+              { "type": "deletion" },
+              { "type": "non_fast_forward" }
+            ]
+          }
+
+          result = subprocess.run(
+            ["curl", "-sf", "-X", "POST",
+             "-H", f"Authorization: token {token}",
+             "-H", "Content-Type: application/json",
+             "-H", "X-GitHub-Api-Version: 2022-11-28",
+             "-d", json.dumps(ruleset),
+             f"https://api.github.com/repos/{repo}/rulesets"],
+            capture_output=True, text=True
+          )
+          response = json.loads(result.stdout)
+          if "id" in response:
+            print(f"✅ Created 'Protect dev' ruleset (id={response['id']})")
+          else:
+            print(f"❌ Failed: {result.stdout}")
+            exit(1)
+          EOF
+
+      - name: Create — Protect feature branches ruleset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, subprocess, os
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GITHUB_TOKEN"]
+
+          ruleset = {
+            "name": "Protect feature branches",
+            "target": "branch",
+            "enforcement": "active",
+            "conditions": {
+              "ref_name": {
+                "include": ["refs/heads/feature/**"],
+                "exclude": []
+              }
+            },
+            "rules": [
+              { "type": "deletion" },
+              { "type": "non_fast_forward" }
+            ]
+          }
+
+          result = subprocess.run(
+            ["curl", "-sf", "-X", "POST",
+             "-H", f"Authorization: token {token}",
+             "-H", "Content-Type: application/json",
+             "-H", "X-GitHub-Api-Version: 2022-11-28",
+             "-d", json.dumps(ruleset),
+             f"https://api.github.com/repos/{repo}/rulesets"],
+            capture_output=True, text=True
+          )
+          response = json.loads(result.stdout)
+          if "id" in response:
+            print(f"✅ Created 'Protect feature branches' ruleset (id={response['id']})")
+          else:
+            print(f"❌ Failed: {result.stdout}")
+            exit(1)
+          EOF
+
+      - name: Summary
+        run: |
+          echo ""
+          echo "=== Branch Rulesets Applied ==="
+          echo "  ✅ Protect main   — 2 approvals, dismiss stale, code-owner review,"
+          echo "                      resolved conversations, signed commits, linear history,"
+          echo "                      block force-push + delete"
+          echo "  ✅ Protect dev    — 1 approval, dismiss stale, resolved conversations,"
+          echo "                      block force-push + delete"
+          echo "  ✅ Protect feature branches — block force-push + delete on feature/**"
+          echo ""
+          echo "  ⚠️  required_status_checks omitted: no CI/test workflow exists yet."
+          echo "     Add one and reference its job name in the ruleset to enable it."
+          echo "  ⚠️  require_code_owner_review active but no CODEOWNERS file exists."
+          echo "     Create .github/CODEOWNERS to assign reviewers."

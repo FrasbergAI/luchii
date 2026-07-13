@@ -1,14 +1,12 @@
 name: Apply Branch Rulesets
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'copilot/create-and-apply-branch-rulesets'
-  workflow_dispatch:
 
-permissions:
-  contents: write
-  administration: write
+permissions: write-all
 
 jobs:
   apply-rulesets:

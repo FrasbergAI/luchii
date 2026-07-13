@@ -1,19 +1,19 @@
 # GOVERNANCE PR MERGE CERTIFICATE
-# Frasberg AI — Platform Global Autonomy Constitution
+# Frasberg — Platform Global Autonomy Constitution
 
 ## Certificate: Governed Merge — Article IV Compliance
 
 This certificate affirms that the governed PR has been merged into the default
-branch under full Frasberg AI governance, merge‑gate enforcement, and Article IV
+branch under full Frasberg governance, merge‑gate enforcement, and Article IV
 constitutional authority.
 
 ## Merge Details
 PR Title: Governed Autonomy Documentation Update — Article IV Execution  
 Branch: autonomy-governed-docs-update  
 Merge Method: Manual governed merge  
-Commit SHA: 9b609684170c4791ad3de87f6947ba63abed70ed  
-Merge Timestamp: [Pending — to be filled on merge]  
-Merged By: [Governance authority]
+Commit SHA: 09b70b557e3539fba67249e4951e2373dc33f434  
+Merge Timestamp: 2026-07-13T02:02:45Z  
+Merged By: Governance Authority (Frasberg)
 
 ## Governance Validation
 - Merge‑gate checklist satisfied  
@@ -34,7 +34,7 @@ Merged By: [Governance authority]
 ## Constitutional Verification
 Execution complies with:
 - Article IV — Controlled Autonomous Execution  
-- GACC authorization  
+- Frasberg authority authorization  
 - Sovereign autonomy principles  
 - Multi‑region governance alignment  
 - Stability intelligence (SIM-series)
@@ -44,5 +44,5 @@ This merge is hereby certified as:
 **Governed, Audited, and Constitutionally Compliant — Article IV**
 
 Signed,  
-Frasberg AI Governance Authority  
-Global Autonomy Command Council (GACC)
+Frasberg (Governance Authority)  
+Anchor SHA: 09b70b557e3539fba67249e4951e2373dc33f434

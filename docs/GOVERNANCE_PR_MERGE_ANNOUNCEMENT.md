@@ -7,9 +7,9 @@ The governed PR titled **"Governed Autonomy Documentation Update — Article IV 
 ## Merge Summary
 - Branch: autonomy-governed-docs-update  
 - Merge Method: Manual governed merge  
-- Commit SHA: 9b609684170c4791ad3de87f6947ba63abed70ed  
-- Merge Timestamp: [Pending — to be filled on merge]  
-- Merged By: [Governance authority]  
+- Commit SHA: 09b70b557e3539fba67249e4951e2373dc33f434  
+- Merge Timestamp: 2026-07-13T02:02:45Z  
+- Merged By: Governance Authority (Frasberg)  
 
 ## Governance Compliance
 - Merge‑gate checklist satisfied  

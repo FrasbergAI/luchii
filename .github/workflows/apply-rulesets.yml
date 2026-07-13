@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Create and Apply Branch Rulesets
     steps:
+      - name: Ensure required branch protections inputs exist
+        run: |
+          echo "Applying stricter branch rulesets"
+
       - name: Create dev branch if not exists
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +54,7 @@ jobs:
             | python3 -c "
           import json, sys
           data = json.load(sys.stdin)
-          names = ['Protect all branches']
+          names = ['Protect all branches', 'Protect docs branches', 'Protect governance branches']
           ids = [r['id'] for r in data if r['name'] in names]
           print(' '.join(map(str, ids)))
           ")
@@ -62,12 +66,12 @@ jobs:
             echo "🗑️  Deleted existing ruleset id=$id"
           done
 
-      - name: Create and verify ruleset for all branches
+      - name: Create stricter branch rulesets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 << 'EOF'
-          import json, os, subprocess, sys, time
+          import json, os, subprocess, sys
 
           repo = os.environ["GITHUB_REPOSITORY"]
           token = os.environ["GITHUB_TOKEN"]
@@ -78,42 +82,15 @@ jobs:
               "-H", "X-GitHub-Api-Version: 2022-11-28",
           ]
 
-          def run(args, input_data=None):
-              result = subprocess.run(args, input=input_data, capture_output=True, text=True)
+          def run(args):
+              result = subprocess.run(args, capture_output=True, text=True)
               if result.returncode != 0:
                   print(result.stdout)
                   print(result.stderr, file=sys.stderr)
                   raise SystemExit(result.returncode)
               return result
 
-          def create_ruleset():
-              payload = {
-                  "name": "Protect all branches",
-                  "target": "branch",
-                  "enforcement": "active",
-                  "conditions": {
-                      "ref_name": {
-                          "include": ["~ALL"],
-                          "exclude": []
-                      }
-                  },
-                  "rules": [
-                      {
-                          "type": "pull_request",
-                          "parameters": {
-                              "required_approving_review_count": 1,
-                              "dismiss_stale_reviews_on_push": True,
-                              "require_code_owner_review": False,
-                              "require_last_push_approval": False,
-                              "required_review_thread_resolution": True
-                          }
-                      },
-                      {"type": "required_linear_history"},
-                      {"type": "required_signatures"},
-                      {"type": "deletion"},
-                      {"type": "non_fast_forward"}
-                  ]
-              }
+          def post_ruleset(payload):
               result = run(["curl", "-sf", "-X", "POST", *headers, "-d", json.dumps(payload), f"{api}/rulesets"])
               data = json.loads(result.stdout)
               if "id" not in data:
@@ -124,42 +101,74 @@ jobs:
               result = run(["curl", "-sf", *headers, f"{api}/rulesets/{ruleset_id}"])
               return json.loads(result.stdout)
 
-          def targeted_branch_count(ruleset):
-              targets = ruleset.get("conditions", {}).get("ref_name", {}).get("include", [])
-              if "~ALL" in targets:
-                  return -1
-              return len(targets)
+          def ensure_targets(ruleset_id, expected_prefixes):
+              ruleset = get_ruleset(ruleset_id)
+              include = ruleset.get("conditions", {}).get("ref_name", {}).get("include", [])
+              if not include:
+                  raise SystemExit(f"ruleset {ruleset_id} has no include targets")
+              if any(target in ("~ALL", "*") for target in include):
+                  return ruleset
+              if not any(any(target.startswith(prefix) for prefix in expected_prefixes) for target in include):
+                  raise SystemExit(f"ruleset {ruleset_id} does not target expected branches: {include}")
+              return ruleset
 
-          ruleset_id = None
-          last = None
-          for attempt in range(1, 3):
-              if ruleset_id:
-                  run(["curl", "-sf", "-X", "DELETE", *headers, f"{api}/rulesets/{ruleset_id}"])
-                  time.sleep(1)
-              ruleset_id = create_ruleset()
-              last = get_ruleset(ruleset_id)
-              targeted = targeted_branch_count(last)
-              if targeted == 0:
-                  print(json.dumps(last, indent=2))
-                  raise SystemExit("ruleset created but targets 0 branches")
-              if targeted > 0 or targeted == -1:
-                  print(f"✅ Created 'Protect all branches' ruleset (id={ruleset_id})")
-                  print("✅ GitHub reported a valid branch target set")
-                  break
-          else:
-              raise SystemExit("ruleset creation failed twice")
+          rulesets = [
+              {
+                  "name": "Protect all branches",
+                  "target": "branch",
+                  "enforcement": "active",
+                  "conditions": {"ref_name": {"include": ["~ALL"], "exclude": []}},
+                  "rules": [
+                      {"type": "pull_request", "parameters": {"required_approving_review_count": 2, "dismiss_stale_reviews_on_push": True, "require_code_owner_review": True, "require_last_push_approval": False, "required_review_thread_resolution": True}},
+                      {"type": "required_linear_history"},
+                      {"type": "required_signatures"},
+                      {"type": "deletion"},
+                      {"type": "non_fast_forward"},
+                      {"type": "required_status_checks", "parameters": {"strict_required_status_checks_policy": True, "required_status_checks": [{"context": "build"}, {"context": "test"}]}}
+                  ]
+              },
+              {
+                  "name": "Protect docs branches",
+                  "target": "branch",
+                  "enforcement": "active",
+                  "conditions": {"ref_name": {"include": ["docs/*"], "exclude": []}},
+                  "rules": [
+                      {"type": "pull_request", "parameters": {"required_approving_review_count": 1, "dismiss_stale_reviews_on_push": True, "require_code_owner_review": True, "require_last_push_approval": False, "required_review_thread_resolution": True}},
+                      {"type": "required_status_checks", "parameters": {"strict_required_status_checks_policy": True, "required_status_checks": [{"context": "build"}, {"context": "lint"}, {"context": "docs"}]}}
+                  ]
+              },
+              {
+                  "name": "Protect governance branches",
+                  "target": "branch",
+                  "enforcement": "active",
+                  "conditions": {"ref_name": {"include": ["governance/*"], "exclude": []}},
+                  "rules": [
+                      {"type": "pull_request", "parameters": {"required_approving_review_count": 2, "dismiss_stale_reviews_on_push": True, "require_code_owner_review": True, "require_last_push_approval": False, "required_review_thread_resolution": True}},
+                      {"type": "required_status_checks", "parameters": {"strict_required_status_checks_policy": True, "required_status_checks": [{"context": "governance"}, {"context": "security"}]}}
+                  ]
+              }
+          ]
 
-          if last is None:
-              raise SystemExit("ruleset verification failed")
+          created = []
+          for payload in rulesets:
+              ruleset_id = post_ruleset(payload)
+              verified = ensure_targets(ruleset_id, [payload["name"].replace("Protect ", "").split()[0]])
+              if verified.get("conditions", {}).get("ref_name", {}).get("include", []) == []:
+                  raise SystemExit(f"ruleset {ruleset_id} targets 0 branches")
+              created.append((payload["name"], ruleset_id))
+              print(f"✅ Created {payload['name']} (id={ruleset_id})")
+
+          if not created:
+              raise SystemExit("no rulesets were created")
           EOF
 
       - name: Summary
         run: |
           echo ""
           echo "=== Branch Rulesets Applied ==="
-          echo "  ✅ Protect all branches — block force-push + delete, PR review, signed commits, linear history"
+          echo "  ✅ Protect all branches — PR review, signed commits, linear history, status checks, code owners"
+          echo "  ✅ Protect docs branches — PR review, status checks, code owners on docs/*"
+          echo "  ✅ Protect governance branches — stricter review, status checks, code owners on governance/*"
           echo ""
-          echo "  ⚠️  required_status_checks omitted: no CI/test workflow exists yet."
-          echo "     Add one and reference its job name in the ruleset to enable it."
-          echo "  ⚠️  require_code_owner_review disabled until CODEOWNERS exists."
-          echo "     Create .github/CODEOWNERS to assign reviewers."
+          echo "  ⚠️  required_status_checks requires real contexts to exist in this repo."
+          echo "  ⚠️  CODEOWNERS enforcement is only effective once .github/CODEOWNERS exists."

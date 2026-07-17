@@ -1,0 +1,32 @@
+{
+  "name": "@frasberg/autonomous-cloud-v1",
+  "version": "1.0.0",
+  "description": "Frasberg Autonomous Cloud V1 - Global autonomy organism with sovereignty, federation, evolution, and constitutional governance",
+  "main": "packages/os/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "docs": "echo 'Documentation available in /docs'",
+    "dev": "ts-node packages/os/index.ts"
+  },
+  "keywords": [
+    "autonomy",
+    "cloud",
+    "sovereignty",
+    "multi-cloud",
+    "federation",
+    "governance",
+    "safety-envelope"
+  ],
+  "author": "FrasbergAI",
+  "license": "Proprietary",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

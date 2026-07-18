@@ -1,10 +1,12 @@
 // Updated main entry point with all routes
 import express from 'express';
 import cors from 'cors';
+import { createServer } from 'http';
 import { config } from 'dotenv';
 import { initializeDatabase } from './db/client';
 import { initializeTiers } from './services/tiers';
 import { errorHandler } from './middleware/errorHandler';
+import { createRealTimeUpdates } from './realtime/RealTimeUpdatesManager';
 
 // Load environment variables
 config();
@@ -30,6 +32,8 @@ import tenantsRouter from './routes/tenants';
 import evolutionFiltersRouter from './api/evolution-filters/routes';
 import dashboardRouter from './api/dashboard/routes';
 import sieRouter from './api/sie/routes';
+import alertsRouter from './api/alerts/routes';
+import analyticsRouter from './api/analytics/routes';
 
 // Health check
 app.get('/health', (req, res) => {
@@ -52,6 +56,8 @@ app.use('/api/v1/tenants', tenantsRouter);
 app.use('/api/v1/evolution/filters', evolutionFiltersRouter);
 app.use('/api/v1/dashboard', dashboardRouter);
 app.use('/api/v1/sie', sieRouter);
+app.use('/api/v1/alerts', alertsRouter);
+app.use('/api/v1/analytics', analyticsRouter);
 
 // Global error handler
 app.use(errorHandler);
@@ -67,12 +73,20 @@ async function start() {
     // Initialize commercial tiers
     await initializeTiers();
 
+    // Create HTTP server for WebSocket support
+    const httpServer = createServer(app);
+
+    // Initialize real-time updates
+    const realtimeManager = createRealTimeUpdates(httpServer);
+
     // Start server
-    app.listen(PORT, () => {
+    httpServer.listen(PORT, () => {
       console.log(`🚀 Frasberg Autonomous Cloud API listening on port ${PORT}`);
-      console.log(`📊 ACO Dashboard: http://localhost:${PORT}/api/v1/aco/dashboard`);
-      console.log(`📈 Federation View: http://localhost:${PORT}/api/v1/federation/view`);
-      console.log(`💼 Status: http://localhost:${PORT}/api/v1/status/public/overview`);
+      console.log(`📊 Dashboard: http://localhost:${PORT}/api/v1/dashboard`);
+      console.log(`📊 SIE: http://localhost:${PORT}/api/v1/sie`);
+      console.log(`🚨 Alerts: http://localhost:${PORT}/api/v1/alerts`);
+      console.log(`📈 Analytics: http://localhost:${PORT}/api/v1/analytics`);
+      console.log(`🔌 WebSocket: ws://localhost:${PORT}`);
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error);

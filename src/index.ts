@@ -28,6 +28,8 @@ import onboardingRouter from './routes/onboarding';
 import launchRouter from './routes/launch';
 import tenantsRouter from './routes/tenants';
 import evolutionFiltersRouter from './api/evolution-filters/routes';
+import dashboardRouter from './api/dashboard/routes';
+import sieRouter from './api/sie/routes';
 
 // Health check
 app.get('/health', (req, res) => {
@@ -48,6 +50,8 @@ app.use('/api/v1/tenants', tenantsRouter);
 
 // Governance API routes
 app.use('/api/v1/evolution/filters', evolutionFiltersRouter);
+app.use('/api/v1/dashboard', dashboardRouter);
+app.use('/api/v1/sie', sieRouter);
 
 // Global error handler
 app.use(errorHandler);

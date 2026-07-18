@@ -27,6 +27,7 @@ import federationRouter from './routes/federation';
 import onboardingRouter from './routes/onboarding';
 import launchRouter from './routes/launch';
 import tenantsRouter from './routes/tenants';
+import evolutionFiltersRouter from './api/evolution-filters/routes';
 
 // Health check
 app.get('/health', (req, res) => {
@@ -44,6 +45,9 @@ app.use('/api/v1/federation', federationRouter);
 app.use('/api/v1/onboarding', onboardingRouter);
 app.use('/api/v1/launch', launchRouter);
 app.use('/api/v1/tenants', tenantsRouter);
+
+// Governance API routes
+app.use('/api/v1/evolution/filters', evolutionFiltersRouter);
 
 // Global error handler
 app.use(errorHandler);

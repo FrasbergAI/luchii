@@ -12,6 +12,14 @@ import {
   QueryTelemetryCommand,
   SimulateConstitutionChangeCommand,
 } from "./commands";
+import {
+  ListInsightsCommand,
+  ShowCriticalInsightsCommand,
+  ListRecommendationsCommand,
+  ViewDashboardCommand,
+  ShowSystemScoreCommand,
+  ShowCorridorHealthCommand,
+} from "./insights-commands";
 import { Logger, getLogger } from "../governance/logger";
 
 const logger = getLogger("FrasbergCLI");
@@ -54,6 +62,18 @@ async function main() {
     "gov simulate constitution-change",
     new SimulateConstitutionChangeCommand()
   );
+
+  // Insight commands
+  cli.registerCommand("insights list", new ListInsightsCommand());
+  cli.registerCommand("insights critical", new ShowCriticalInsightsCommand());
+
+  // Recommendation commands
+  cli.registerCommand("recommendations list", new ListRecommendationsCommand());
+
+  // Dashboard commands
+  cli.registerCommand("dashboard view", new ViewDashboardCommand());
+  cli.registerCommand("dashboard score", new ShowSystemScoreCommand());
+  cli.registerCommand("dashboard health", new ShowCorridorHealthCommand());
 
   try {
     const args = process.argv.slice(2);
